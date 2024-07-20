@@ -1,3 +1,3 @@
 # spoky
-### Made with love
-### wonnd3r
+**Made with love**
+**wonnd3r**
