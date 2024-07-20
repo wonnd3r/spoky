@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "spoky",
+	"version": "${version}",
+	"name": "Spoky",
+	"description": "Sound mod dedicated to donRubius",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/spoky/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"wonnd3r.dev.Spoky"
+		],
+		"client": [
+			"wonnd3r.dev.SpokyClient"
+		],
+		"fabric-datagen": [
+			"wonnd3r.dev.SpokyDataGenerator"
+		]
+	},
+	"mixins": [
+		"spoky.mixins.json",
+		{
+			"config": "spoky.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
