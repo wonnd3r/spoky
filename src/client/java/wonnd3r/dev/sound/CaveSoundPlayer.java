@@ -24,7 +24,7 @@ public class CaveSoundPlayer {
                     // First sound fase
                     if (pos.getY() <= 0) {
                         Random r = new Random();
-                        int randomNumber = r.nextInt(380);
+                        int randomNumber = r.nextInt(580);
                         if (randomNumber == 1) {
                             playSound_rubius_voice1(client, pos);
                         } if (randomNumber == 2) {
@@ -33,6 +33,10 @@ public class CaveSoundPlayer {
                             playSound_dry_hands_intro(client, pos);
                         } if (randomNumber == 4) {
                             playSound_tock1(client, pos);
+                        } if (randomNumber == 5) {
+                            playSound_head1(client, pos);
+                        } if (randomNumber == 6) {
+                            playSound_move1(client, pos);
                         }
                     }
 
@@ -86,5 +90,11 @@ public class CaveSoundPlayer {
     }
     private void playSound_morse2(MinecraftClient client, BlockPos pos) {
         client.getSoundManager().play(PositionedSoundInstance.master(SoundsRegister.MORSE2_EVENT, 1.0F, 1.0F));
+    }
+    private void playSound_head1(MinecraftClient client, BlockPos pos) {
+        client.getSoundManager().play(PositionedSoundInstance.master(SoundsRegister.HEAD1_EVENT, 1.0F, 1.0F));
+    }
+    private void playSound_move1(MinecraftClient client, BlockPos pos) {
+        client.getSoundManager().play(PositionedSoundInstance.master(SoundsRegister.MOVE1_EVENT, 1.0F, 1.0F));
     }
 }

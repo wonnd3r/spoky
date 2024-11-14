@@ -8,6 +8,7 @@ import wonnd3r.dev.sound.CaveSoundPlayer;
 import wonnd3r.dev.sound.LowHealthSoundPlayer;
 import wonnd3r.dev.sound.SoundsRegister;
 
+@SuppressWarnings("ALL")
 public class SpokyClient implements ClientModInitializer {
 
 	@Override

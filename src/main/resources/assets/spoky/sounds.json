@@ -78,5 +78,21 @@
         "stream": false
       }
     ]
+  },
+  "head1": {
+    "sounds": [
+      {
+        "name": "spoky:head1",
+        "stream": false
+      }
+    ]
+  },
+  "move1": {
+    "sounds": [
+      {
+        "name": "spoky:move1",
+        "stream": false
+      }
+    ]
   }
 }
