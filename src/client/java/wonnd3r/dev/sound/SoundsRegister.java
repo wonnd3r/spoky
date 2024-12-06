@@ -3,7 +3,6 @@
 package wonnd3r.dev.sound;
 
 import net.fabricmc.api.ClientModInitializer;
-import net.minecraft.client.sound.Sound;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.registry.Registries;
@@ -20,9 +19,13 @@ public class SoundsRegister implements ClientModInitializer {
     public static final Identifier BANG1_ID = new Identifier("spoky", "bang1");
     public static final SoundEvent BANG1_EVENT = SoundEvent.of(BANG1_ID);
 
-    // ambient1 [[ THIS SOUND WILL NEVER BE USED SINCE THE MOD "AMBIENT SOUNDS" ALREADY DOES THAT ]]
+    // ambient1
     public static final Identifier AMBIENT1_ID = new Identifier("spoky", "ambient1");
     public static final SoundEvent AMBIENT1_EVENT = SoundEvent.of(AMBIENT1_ID);
+
+    //ambient2
+    public static final Identifier AMBIENT2_ID = new Identifier("spoky", "ambient2");
+    public static final SoundEvent AMBIENT2_EVENT = SoundEvent.of(AMBIENT2_ID);
 
     // dry_hands_intro
     public static final Identifier DRY_HANDS_INTO_ID = new Identifier("spoky", "dry_hands_intro");
@@ -53,12 +56,13 @@ public class SoundsRegister implements ClientModInitializer {
     public static final SoundEvent MORSE2_EVENT = SoundEvent.of(MORSE2_ID);
 
     // head1
-    public static final Identifier HEAD1_ID = new Identifier("spoky", "head1");
+    public static final Identifier HEAD1_ID = new Identifier("spoky", "morse2");
     public static final SoundEvent HEAD1_EVENT = SoundEvent.of(HEAD1_ID);
 
     // move1
-    public static final Identifier MOVE1_ID = new Identifier("spoky", "move1");
+    public static final Identifier MOVE1_ID = new Identifier("spoky", "morse2");
     public static final SoundEvent MOVE1_EVENT = SoundEvent.of(MOVE1_ID);
+
 
     public static void registerSounds() {
         // Registering sounds
@@ -71,6 +75,7 @@ public class SoundsRegister implements ClientModInitializer {
         Registry.register(Registries.SOUND_EVENT, RUBIUS_VOICE1_ID, RUBIUS_VOICE1_EVENT);
         Registry.register(Registries.SOUND_EVENT, BANG1_ID, BANG1_EVENT);
         Registry.register(Registries.SOUND_EVENT, AMBIENT1_ID, AMBIENT1_EVENT);
+        Registry.register(Registries.SOUND_EVENT, AMBIENT2_ID, AMBIENT2_EVENT);
         Registry.register(Registries.SOUND_EVENT, DRY_HANDS_INTO_ID, DRY_HANDS_INTRO_EVENT);
         Registry.register(Registries.SOUND_EVENT, HEART_ID, HEART_EVENT);
         Registry.register(Registries.SOUND_EVENT, TOCK1_ID, TOCK1_EVENT);
@@ -79,5 +84,6 @@ public class SoundsRegister implements ClientModInitializer {
         Registry.register(Registries.SOUND_EVENT, MORSE2_ID, MORSE2_EVENT);
         Registry.register(Registries.SOUND_EVENT, HEAD1_ID, HEAD1_EVENT);
         Registry.register(Registries.SOUND_EVENT, MOVE1_ID, MOVE1_EVENT);
+
     }
 }

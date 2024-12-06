@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.util.math.BlockPos;
 import java.util.Random;
+import java.util.logging.Logger;
 
 @SuppressWarnings("ALL")
 public class CaveSoundPlayer {
@@ -17,14 +18,22 @@ public class CaveSoundPlayer {
         // Checking all the conditions
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (client.world != null && client.player != null && !client.player.isSpectator()) {
-                long currentTime = System.currentTimeMillis();
-                if (currentTime - lastCheckTime >= 1000) {
+                long currentTime = System.nanoTime();
+                if (currentTime - lastCheckTime >= 1) {
                     BlockPos pos = client.player.getBlockPos();
+
+                    // Play ambient sound
+                    updateSoundState(client);
+                    if (pos.getY() <= 0) {
+                        playSound_ambient1(client, pos);
+                    } else {
+                        stopSound_ambient1(client);
+                    }
 
                     // First sound fase
                     if (pos.getY() <= 0) {
                         Random r = new Random();
-                        int randomNumber = r.nextInt(580);
+                        int randomNumber = r.nextInt(50000);
                         if (randomNumber == 1) {
                             playSound_rubius_voice1(client, pos);
                         } if (randomNumber == 2) {
@@ -42,7 +51,7 @@ public class CaveSoundPlayer {
 
                     // Second sound fase
                     Random r2 = new Random();
-                    int randomNumber2 = r2.nextInt(300);
+                    int randomNumber2 = r2.nextInt(70000);
                     if (pos.getY() >= -59 && pos.getY() <= -48 && randomNumber2 == 1) {
                         playSound_wet_hands(client, pos);
                     } if (pos.getY() >= -59 && pos.getY() <= -48 && randomNumber2 >= 295) {
@@ -52,7 +61,7 @@ public class CaveSoundPlayer {
                     // Third sound fase
                     if (pos.getY() <= 0) {
                         Random r3 = new Random();
-                        int randomNumber3 = r3.nextInt(900);
+                        int randomNumber3 = r3.nextInt(90000);
                         if (randomNumber3 == 1) {
                             playSound_morse1(client, pos);
                         } if (randomNumber3 == 2) {
@@ -68,7 +77,7 @@ public class CaveSoundPlayer {
 
     // Play the sound
     private void playSound_rubius_voice1(MinecraftClient client, BlockPos pos) {
-        client.getSoundManager().play(PositionedSoundInstance.master(SoundsRegister.RUBIUS_VOICE1_EVENT, 1.0F, 1.0F));
+        client.getSoundManager().play(PositionedSoundInstance.master(SoundsRegister.RUBIUS_VOICE1_EVENT, 1.0F, 0.9F));
     }
     private void playSound_bang1(MinecraftClient client, BlockPos pos) {
         client.getSoundManager().play(PositionedSoundInstance.master(SoundsRegister.BANG1_EVENT, 1.0F, 0.5F));
@@ -82,9 +91,28 @@ public class CaveSoundPlayer {
     private void playSound_wet_hands(MinecraftClient client, BlockPos pos) {
         client.getSoundManager().play(PositionedSoundInstance.master(SoundsRegister.WET_HANDS_EVENT, 1.0F, 1.0F));
     }
+
+    // Special ambient play/stop
+    private boolean isAmbientPlaying = false;
+    private PositionedSoundInstance ambientSoundInstance;
+
     private void playSound_ambient1(MinecraftClient client, BlockPos pos) {
-        client.getSoundManager().play(PositionedSoundInstance.master(SoundsRegister.AMBIENT1_EVENT, 1.0F, 1.0F));
+        if (!isAmbientPlaying) {
+            isAmbientPlaying = true;
+            ambientSoundInstance = PositionedSoundInstance.master(SoundsRegister.AMBIENT2_EVENT, 1.0F, 1.0F);
+            client.getSoundManager().play(ambientSoundInstance);
+        }
     }
+    private void updateSoundState(MinecraftClient client) {
+        if (ambientSoundInstance != null && !client.getSoundManager().isPlaying(ambientSoundInstance)) {
+            isAmbientPlaying = false;
+        }
+    }
+    private void stopSound_ambient1(MinecraftClient client) {
+        isAmbientPlaying = false;
+        client.getSoundManager().stop(ambientSoundInstance);
+    }
+
     private void playSound_morse1(MinecraftClient client, BlockPos pos) {
         client.getSoundManager().play(PositionedSoundInstance.master(SoundsRegister.MORSE1_EVENT, 1.0F, 1.0F));
     }

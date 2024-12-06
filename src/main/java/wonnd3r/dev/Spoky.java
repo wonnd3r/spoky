@@ -16,7 +16,7 @@ public class Spoky implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
-		LOGGER.info("Initializing...");
+		LOGGER.info("[SPOKY] Initializing...");
 
 	}
 }
