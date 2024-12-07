@@ -1,0 +1,138 @@
+{
+  "ambient1": {
+    "sounds": [
+      {
+        "name": "spoky:ambient1",
+        "stream": false
+      }
+    ]
+  },
+  "ambient2": {
+    "sounds": [
+      {
+        "name": "spoky:ambient2",
+        "stream": false
+      }
+    ]
+  },
+  "bang1": {
+    "sounds": [
+      {
+        "name": "spoky:bang1",
+        "stream": false
+      }
+    ]
+  },
+  "heart": {
+    "sounds": [
+      {
+        "name": "spoky:heart",
+        "stream": false
+      }
+    ]
+  },
+  "rubius_voice1": {
+    "sounds": [
+      {
+        "name": "spoky:rubius_voice1",
+        "stream": false
+      }
+    ]
+  },
+  "tock1": {
+    "sounds": [
+      {
+        "name": "spoky:tock1",
+        "stream": false
+      }
+    ]
+  },
+  "tock1_behind": {
+    "sounds": [
+      {
+        "name": "spoky:tock1_behind",
+        "stream": false
+      }
+    ]
+  },
+  "morse1": {
+    "sounds": [
+      {
+        "name": "spoky:morse1",
+        "stream": false
+      }
+    ]
+  },
+  "morse2": {
+    "sounds": [
+      {
+        "name": "spoky:morse2",
+        "stream": false
+      }
+    ]
+  },
+  "head1": {
+    "sounds": [
+      {
+        "name": "spoky:head1",
+        "stream": false
+      }
+    ]
+  },
+  "move1": {
+    "sounds": [
+      {
+        "name": "spoky:move1",
+        "stream": false
+      }
+    ]
+  },
+  "fall1": {
+    "sounds": [
+      {
+        "name": "spoky:fall1",
+        "stream": false
+      }
+    ]
+  },
+  "fall2": {
+    "sounds": [
+      {
+        "name": "spoky:fall2",
+        "stream": false
+      }
+    ]
+  },
+  "rock1": {
+    "sounds": [
+      {
+        "name": "spoky:rock1",
+        "stream": false
+      }
+    ]
+  },
+  "rock2": {
+    "sounds": [
+      {
+        "name": "spoky:rock2",
+        "stream": false
+      }
+    ]
+  },
+  "sstv1": {
+    "sounds": [
+      {
+        "name": "spoky:sstv1",
+        "stream": false
+      }
+    ]
+  },
+  "whistle1": {
+    "sounds": [
+      {
+        "name": "spoky:whistle1",
+        "stream": false
+      }
+    ]
+  }
+}
