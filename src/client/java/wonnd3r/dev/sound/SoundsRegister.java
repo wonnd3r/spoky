@@ -27,10 +27,6 @@ public class SoundsRegister implements ClientModInitializer {
     public static final Identifier AMBIENT2_ID = new Identifier("spoky", "ambient2");
     public static final SoundEvent AMBIENT2_EVENT = SoundEvent.of(AMBIENT2_ID);
 
-    // dry_hands_intro
-    public static final Identifier DRY_HANDS_INTO_ID = new Identifier("spoky", "dry_hands_intro");
-    public static final SoundEvent DRY_HANDS_INTRO_EVENT = SoundEvent.of(DRY_HANDS_INTO_ID);
-
     // heart
     public static final Identifier HEART_ID = new Identifier("spoky", "heart");
     public static final SoundEvent HEART_EVENT = SoundEvent.of(HEART_ID);
@@ -42,10 +38,6 @@ public class SoundsRegister implements ClientModInitializer {
     // tock1_behind [[ THIS SOUND WILL NEVER BE USED SINCE MINECRAFT DOES NOT SUPPORT STEREO SOUNDS ]]
     public static final Identifier TOCK1_BEHIND_ID = new Identifier("spoky", "tock1_behind");
     public static final SoundEvent TOCK1_BEHIND_EVENT = SoundEvent.of(TOCK1_BEHIND_ID);
-
-    // wet_hands
-    public static final Identifier WET_HANDS_ID = new Identifier("spoky", "wet_hands");
-    public static final SoundEvent WET_HANDS_EVENT = SoundEvent.of(WET_HANDS_ID);
 
     // morse1
     public static final Identifier MORSE1_ID = new Identifier("spoky", "morse1");
@@ -63,6 +55,25 @@ public class SoundsRegister implements ClientModInitializer {
     public static final Identifier MOVE1_ID = new Identifier("spoky", "morse2");
     public static final SoundEvent MOVE1_EVENT = SoundEvent.of(MOVE1_ID);
 
+    // fall1
+    public static final Identifier FALL1_ID = new Identifier("spoky", "fall1");
+    public static final SoundEvent FALL1_EVENT = SoundEvent.of(FALL1_ID);
+
+    // fall2
+    public static final Identifier FALL2_ID = new Identifier("spoky", "fall2");
+    public static final SoundEvent FALL2_EVENT = SoundEvent.of(FALL2_ID);
+
+    // rock1
+    public static final Identifier ROCK1_ID = new Identifier("spoky", "rock1");
+    public static final SoundEvent ROCK1_EVENT = SoundEvent.of(ROCK1_ID);
+
+    // rock2
+    public static final Identifier ROCK2_ID = new Identifier("spoky", "rock2");
+    public static final SoundEvent ROCK2_EVENT = SoundEvent.of(ROCK2_ID);
+
+    // whistle
+    public static final Identifier WHISTLE1_ID = new Identifier("spoky", "whistle1");
+    public static final SoundEvent WHISTLE1_EVENT = SoundEvent.of(WHISTLE1_ID);
 
     public static void registerSounds() {
         // Registering sounds
@@ -76,7 +87,6 @@ public class SoundsRegister implements ClientModInitializer {
         Registry.register(Registries.SOUND_EVENT, BANG1_ID, BANG1_EVENT);
         Registry.register(Registries.SOUND_EVENT, AMBIENT1_ID, AMBIENT1_EVENT);
         Registry.register(Registries.SOUND_EVENT, AMBIENT2_ID, AMBIENT2_EVENT);
-        Registry.register(Registries.SOUND_EVENT, DRY_HANDS_INTO_ID, DRY_HANDS_INTRO_EVENT);
         Registry.register(Registries.SOUND_EVENT, HEART_ID, HEART_EVENT);
         Registry.register(Registries.SOUND_EVENT, TOCK1_ID, TOCK1_EVENT);
         Registry.register(Registries.SOUND_EVENT, TOCK1_BEHIND_ID, TOCK1_BEHIND_EVENT);
@@ -84,6 +94,10 @@ public class SoundsRegister implements ClientModInitializer {
         Registry.register(Registries.SOUND_EVENT, MORSE2_ID, MORSE2_EVENT);
         Registry.register(Registries.SOUND_EVENT, HEAD1_ID, HEAD1_EVENT);
         Registry.register(Registries.SOUND_EVENT, MOVE1_ID, MOVE1_EVENT);
-
+        Registry.register(Registries.SOUND_EVENT, FALL1_ID, FALL1_EVENT);
+        Registry.register(Registries.SOUND_EVENT, FALL2_ID, FALL2_EVENT);
+        Registry.register(Registries.SOUND_EVENT, ROCK1_ID, ROCK1_EVENT);
+        Registry.register(Registries.SOUND_EVENT, ROCK2_ID, ROCK2_EVENT);
+        Registry.register(Registries.SOUND_EVENT, WHISTLE1_ID, WHISTLE1_EVENT);
     }
 }
